@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <title>Jerky</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, rgb(252, 207, 49) 10%, rgb(245, 85, 85) 100%);
+            font-family: "Cerebri Sans", Helvetica, Arial, sans-serif;
+        }
+
+        .container {
+            display: block;
+            max-width: 700px;
+            margin: auto;
+            text-align: center;
+            padding: 0 15px;
+        }
+
+        h1 {
+            color: rgb(219, 24, 24);
+            font-family: 'Dancing Script', cursive;
+        }
+
+        h2 {
+            font-size: 30px;
+            width: 80%;
+            display: block;
+            padding: 15px;
+            margin: 0 auto;
+            border: rgb(248, 98, 11) solid 2px;
+            border-radius: 20px;
+            font-family: 'Dancing Script', cursive;
+
+        }
+
+        .picture {
+            max-width: 80%;
+            display: block;
+            margin: 30px auto;
+            border-radius: 100px 30px 100px 30px;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .picture:hover {
+            max-width: 85%;
+            border-radius: 0px;
+        }
+
+        p {
+            text-align: left;
+            line-height: 1.5;
+            font-size: 18px;
+        }
+
+        em {
+            font-size: 25px;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .wiki {
+            display: block;
+            text-decoration: none;
+            color: #7d51e8;
+            font-weight: bold;
+            width: fit-content;
+            margin: 0 0 0 15px;
+            padding: 5px;
+            transition: all 0.2ms ease-in-out;
+            font-family: 'Dancing Script', cursive;
+            font-size: 23px;
+        }
+
+        .wiki:hover {
+            background: rgba(154, 205, 50, 0.2);
+            border-radius: 10px;
+        }
+
+        .buy-button {
+            display: block;
+            margin: 20px auto;
+            border: 0;
+            background: rgb(248, 98, 11);
+            padding: 15px;
+            font-size: 25px;
+            color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+            transition: all 0.2ms ease-in-out;
+        }
+
+        .buy-button:hover {
+            opacity: 0.8;
+            cursor: pointer;
+
+        }
+
+        strong {
+            font-size: 35px;
+        }
+
+        .footer {
+            font-size: 18px;
+            font-family: 'Dancing Script', cursive;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>I Love Meat</h1>
+        <div>
+            <h2>Expecially tasty <strong>Meat Jerky</strong></h2>
+        </div>
+        <div>
+            <hr>
+            <img class="picture"
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/043/253/original/60dc0639743a8.jpg?1660134224"
+                alt="Jerky on a table" />
+            <hr>
+        </div>
+        <p><em>Jerky</em> is nutrient-dense meat snack that has been cut into strips and dried (dehydrated) to prevent
+            spoilage.<br />
+            Normally, this drying includes the addition of salt to prevent bacteria growth before the meat has finished
+            the
+            dehydrating process.<br /> The word "<em>jerky</em>" derives from the Quechua word ch'arki which means
+            "dried,
+            salted
+            meat".
+            All that is needed to produce basic "<em>jerky</em>" is a low-temperature drying method, and salt to inhibit
+            bacterial
+            growth. By removing the moisture from the meat, <em>jerky</em> can survive long periods of time without
+            spoiling.
+            Because
+            of this, <em>jerky</em> is an excellent on-the-go snack.
+        </p>
+        <div>
+            <a href="https://en.wikipedia.org/wiki/Jerky" class="wiki" target=" _blank">Learn more on Wiki</a>
+        </div>
+        <button class="buy-button">Buy yummy <em>Jerky</em></button>
+        <span class="footer">This page was built by <a href="#">Korbylo Ira</a> at <a href="http://www.shecodes.io"
+                target="_blank">Shecodes.io</a></span>
+    </div>
+    <script>
+        function orderMessage() {
+            alert("Jerky is supplied in a sealed package weighing 50 grams. The cost of 1 box is 2$");
+            getOrder();
+        }
+
+        function getOrder() {
+            let order = prompt("How much would you like to buy?");
+            countOrder(order);
+        }
+
+        function countOrder(order) {
+
+            if (order <= 0) {
+                if (order === null) {
+                    alert("Maybe next time.");
+                } else {
+                    alert("You have entered an incorrect value, please try again.")
+                    getOrder();
+                }
+            } else {
+                let total = order * 2;
+                alert(
+                    `You ordered ${order}. Total payment - ${total}$. Our manager will contact you soon. Thank you! We hope you'll enjoy Jerky!`
+                );
+                return order * 2;
+            }
+
+        }
+
+        let buyButton = document.querySelector(".buy-button");
+        buyButton.addEventListener("click", orderMessage);
+    </script>
+</body>
+
+</html>
